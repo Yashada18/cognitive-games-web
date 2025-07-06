@@ -19,7 +19,7 @@ Coming soon! (Hosted on Vercel/Netlify)
 
 ## 🤝 Team
 - [Yashada Jagtap](https://github.com/Yashada18)
-- [Purva Rane](https://github.com/theirusername)
+- [Purva Rane](https://github.com/Purvaa69)
 
 
 
