@@ -1,5 +1,7 @@
 let currentNumber = 1;
 let totalNumbers = 25;
+let gameOver = false;
+
 const grid = document.getElementById("grid");
 const winMessage = document.getElementById("win-message");
 const levelSelect = document.getElementById("level");
@@ -12,14 +14,17 @@ function startGame() {
   else if (level === 2) totalNumbers = 16;
   else totalNumbers = 25;
 
+  gameOver = false;
+  currentNumber = 1;
+
+  winMessage.classList.add("hidden");
+  winMessage.innerHTML = ""; // Clear any previous messages
+
+  grid.innerHTML = "";
   grid.className = "grid";
   if (level === 1) grid.classList.add("easy");
   else if (level === 2) grid.classList.add("medium");
   else grid.classList.add("hard");
-
-  currentNumber = 1;
-  winMessage.classList.add("hidden");
-  grid.innerHTML = "";
 
   const numbers = Array.from({ length: totalNumbers }, (_, i) => i + 1)
     .sort(() => Math.random() - 0.5);
@@ -34,21 +39,28 @@ function startGame() {
 }
 
 function handleClick(num, btn) {
-    if (num === currentNumber) {
-      btn.style.visibility = "hidden";
-      currentNumber++;
-      if (currentNumber > totalNumbers) {
-        showWinMessage();
-      }
-    } else {
-      // Show Try Again message and disable all numbers
-      showTryAgain();
+  if (gameOver) return;
+
+  if (num === currentNumber) {
+    btn.style.visibility = "hidden";
+    currentNumber++;
+    if (currentNumber > totalNumbers) {
+      gameOver = true;
+      showWinMessage();
     }
+  } else {
+    gameOver = true;
+    showTryAgain();
   }
-                                                                                                                                                                                                               
+}
 
 function showWinMessage() {
+  winMessage.innerHTML = `
+    <h2>🎉 Well Done!</h2>
+    <button onclick="startGame()">Play Again</button>
+  `;
   winMessage.classList.remove("hidden");
+
   confetti({
     particleCount: 200,
     spread: 100,
@@ -56,7 +68,21 @@ function showWinMessage() {
   });
 }
 
-// tsParticles
+function showTryAgain() {
+  winMessage.innerHTML = `
+    <h2 style="color: #ff0080;">❌ Try Again!</h2>
+    <button onclick="startGame()">Restart</button>
+  `;
+  winMessage.classList.remove("hidden");
+
+  const allNumbers = document.querySelectorAll(".number");
+  allNumbers.forEach(btn => {
+    btn.style.pointerEvents = "none";
+    btn.style.opacity = "0.5";
+  });
+}
+
+// Particles background
 tsParticles.load("tsparticles", {
   background: {
     color: "#0d0d0d"
@@ -78,25 +104,3 @@ tsParticles.load("tsparticles", {
 });
 
 window.onload = startGame;
- 
-function showTryAgain() {
-    const message = document.createElement("h2");
-    message.textContent = "❌ Try Again!";
-    message.style.color = "#ff0080";
-    message.style.marginTop = "20px";
-    message.style.animation = "fadeIn 0.5s ease-in-out";
-    winMessage.innerHTML = "";
-    winMessage.appendChild(message);
-    winMessage.classList.remove("hidden");
-    const retryBtn = document.createElement("button");
-    retryBtn.textContent = "Restart";
-    retryBtn.onclick = startGame;
-    winMessage.appendChild(retryBtn);
-    
-    // Disable further clicking
-    const allNumbers = document.querySelectorAll(".number");
-    allNumbers.forEach(btn => {
-      btn.style.pointerEvents = "none";
-      btn.style.opacity = "0.5";
-    });
-  }
