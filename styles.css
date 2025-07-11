@@ -289,39 +289,23 @@ section {
   gap: 5rem;
 }
 
-.tool-card {
-  background: rgba(0, 255, 204, 0.1);
-  border: 2px solid #00ffcc;
-  border-radius: 12px;
-  padding: 2rem 2rem;
-  font-size: 1.2rem;
-  color: white;
-  text-align: center;
-  text-decoration: none;
-  min-width: 350px;
-  box-shadow: 0 0 15px #00ffcc;
-  transition: 0.3s;
-  position: relative;
-  top:100px;
-}
-
-
-
+.tool-card,
 .scoreboard {
   background: rgba(0, 255, 204, 0.1);
   border: 2px solid #00ffcc;
   border-radius: 12px;
-  padding: 2rem 2rem;
+  padding: 2rem;
   font-size: 1.2rem;
   color: white;
+  text-align: center;
   text-decoration: none;
-  min-width:350px;
-  position: relative;
-  margin-top: 4rem; /* responsive spacing */
-  position: relative;
+  min-width: 300px;
   box-shadow: 0 0 15px #00ffcc;
   transition: 0.3s;
+  margin-bottom: 2rem;  /* 👈 adds space between them */
+  position: relative;    /* remove top: 100px or top: 200px */
 }
+
 
 .tool-card:hover,.scoreboard:hover {
   background: #00ffcc;
@@ -538,6 +522,8 @@ textarea#journal-entry {
   .tool-card,
   .scoreboard {
     width: 100%;
-    margin-top: 2rem;
+    min-width: unset;
   }
 }
+
+
