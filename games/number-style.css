@@ -6,7 +6,12 @@ body {
   font-family: 'Press Start 2P', monospace;
   background: radial-gradient(circle, #580876, #1c5899, #127186);
   color: #fff;
+<<<<<<< HEAD
   overflow: auto;
+=======
+  overflow-x: auto;
+  overflow-y: auto;
+>>>>>>> c3eaf14 (Style: Updated CSS for memory, reaction, and number games)
   text-align: center;
 }
 
