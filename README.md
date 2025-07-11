@@ -15,8 +15,7 @@ A simple and fun browser-based platform to train memory, attention, and logic th
 - Optional: Firebase / localStorage
 
 ## 🚀 Live Demo
-Coming soon! (Hosted on Vercel/Netlify)
-
+Hosted on Vercel-cognitive-games-web.vercel.app
 ## 🤝 Team
 - [Yashada Jagtap](https://github.com/Yashada18)
 - [Purva Rane](https://github.com/Purvaa69)
