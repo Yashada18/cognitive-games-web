@@ -195,6 +195,13 @@ section {
 }
 
 .games-page {
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+
+.games-page {
   position: relative;
   z-index: 2;
   color: white;
@@ -508,4 +515,18 @@ textarea#journal-entry {
   background: #999;
   color: white;
   cursor: not-allowed;
+}
+
+@media (max-width: 600px) {
+  .game-card {
+    padding: 1.2rem;
+  }
+
+  .game-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .game-img {
+    height: 140px;
+  }
 }
