@@ -7,12 +7,8 @@ body {
   background: radial-gradient(circle, #580876, #1c5899, #127186);
   color: #fff;
   text-align: center;
-<<<<<<< HEAD
-  overflow: auto;
-=======
-  overflow-x: auto;
   overflow-y: auto;
->>>>>>> c3eaf14 (Style: Updated CSS for memory, reaction, and number games)
+  overflow-x: auto;
 }
 
 #tsparticles {
