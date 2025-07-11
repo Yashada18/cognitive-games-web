@@ -282,13 +282,6 @@ section {
   font-family: 'Orbitron', sans-serif;
 }
 
-.student-tools {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 5rem;
-}
-
 .tool-card,
 .scoreboard {
   background: rgba(0, 255, 204, 0.1);
@@ -302,9 +295,20 @@ section {
   min-width: 300px;
   box-shadow: 0 0 15px #00ffcc;
   transition: 0.3s;
-  margin-bottom: 2rem;  /* 👈 adds space between them */
-  position: relative;    /* remove top: 100px or top: 200px */
+  margin-bottom: 2rem;
+  position: relative;
+  width: 100%; /* make it responsive */
 }
+
+/* Container for all cards */
+.student-tools {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+}
+
 
 
 .tool-card:hover,.scoreboard:hover {
@@ -521,9 +525,10 @@ textarea#journal-entry {
 @media (max-width: 768px) {
   .tool-card,
   .scoreboard {
-    width: 100%;
-    min-width: unset;
+    width: 90%;
+    margin-bottom: 2rem;
   }
 }
+
 
 
