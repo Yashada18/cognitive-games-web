@@ -297,7 +297,7 @@ section {
   transition: 0.3s;
   margin-bottom: 2rem;
   position: relative;
-  width: 80%; /* make it responsive */
+  width: 100%; /* make it responsive */
 }
 
 /* Container for all cards */
