@@ -197,7 +197,7 @@ section {
 
 .games-page {
   overflow-y: auto;
-  overflow-x: hidden;
+  overflow-x: auto;
   min-height: 100vh;
   padding-bottom: 4rem;
 }
