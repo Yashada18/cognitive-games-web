@@ -292,12 +292,12 @@ section {
   color: white;
   text-align: center;
   text-decoration: none;
-  min-width: 300px;
+  min-width: 170px;
   box-shadow: 0 0 15px #00ffcc;
   transition: 0.3s;
   margin-bottom: 2rem;
   position: relative;
-  width: 100%; /* make it responsive */
+  width: 80%; /* make it responsive */
 }
 
 /* Container for all cards */
