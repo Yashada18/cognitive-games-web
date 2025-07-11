@@ -5,6 +5,8 @@ body {
     background: radial-gradient(circle, #580876, #1c5899, #127186);
     color: #fff;
     text-align: center;
+     overflow-x: hidden;
+  overflow-y: auto;
   }
   
   @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
