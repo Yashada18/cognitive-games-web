@@ -317,7 +317,8 @@ section {
   text-decoration: none;
   min-width:350px;
   position: relative;
-  top:200px;
+  margin-top: 4rem; /* responsive spacing */
+  position: relative;
   box-shadow: 0 0 15px #00ffcc;
   transition: 0.3s;
 }
@@ -530,5 +531,13 @@ textarea#journal-entry {
 
   .game-img {
     height: 140px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tool-card,
+  .scoreboard {
+    width: 100%;
+    margin-top: 2rem;
   }
 }
