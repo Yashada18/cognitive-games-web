@@ -6,7 +6,7 @@ body {
   font-family: 'Press Start 2P', monospace;
   background: radial-gradient(circle, #580876, #1c5899, #127186);
   color: #fff;
-  overflow: hidden;
+  overflow: auto;
   text-align: center;
 }
 
