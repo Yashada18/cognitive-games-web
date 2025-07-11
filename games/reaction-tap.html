@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Reaction Tap Game</title>
+  <link rel="stylesheet" href="reaction-style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+</head>
+<body>
+  <div id="tsparticles"></div>
+
+  <div class="game-container">
+    <h1>🔵 Reaction Tap</h1>
+    <p class="instructions">Watch the glowing circles and tap them in the same sequence!</p>
+
+    <div class="circle-grid" id="circle-grid"></div>
+
+    <div class="buttons">
+      <button id="start-btn" onclick="startLevel()">Start Level</button>
+      <button id="next-btn" class="hidden" onclick="nextLevel()">Next Level</button>
+      <h2 id="try-again-msg" class="try-again-msg hidden">❌ Try Again!</h2>
+      <button id="try-again-btn" class="hidden" onclick="retryLevel()">Retry</button>
+      <button onclick="goToMenu()">Back to Menu</button>
+    </div>
+
+    <h2 id="level-info">Level: 1</h2>
+  </div>
+
+  
+
+  <script src="reaction-script.js" defer></script>
+</body>
+</html>

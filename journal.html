@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Journal</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  </style>
+</head>
+<body class="journal-page">
+  <section>
+    <div id="tsparticles"></div>
+    <div class="glow"></div>
+
+    <div class="journal-section">
+      <h2>📓 My Journal</h2>
+      <textarea id="journal-entry" placeholder="Write your thoughts here..."></textarea>
+      <br />
+      <button onclick="saveEntry()" class="journal-btn">💾 Save Entry</button>
+
+      <h3 class="entries-title">📖 Saved Entries</h3>
+      <div id="journal-entries"></div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    const journalBox = document.getElementById("journal-entry");
+    const entriesContainer = document.getElementById("journal-entries");
+
+    // Load existing entries
+    const savedEntries = JSON.parse(localStorage.getItem("journalEntries")) || [];
+    renderEntries();
+
+    function saveEntry() {
+      const text = journalBox.value.trim();
+      if (!text) return;
+
+      const entry = {
+        date: new Date().toLocaleString(),
+        content: text
+      };
+
+      savedEntries.unshift(entry); // latest on top
+      localStorage.setItem("journalEntries", JSON.stringify(savedEntries));
+
+      journalBox.value = "";
+      renderEntries();
+    }
+
+    function renderEntries() {
+  entriesContainer.innerHTML = "";
+  savedEntries.forEach((entry, index) => {
+    const box = document.createElement("div");
+    box.className = "entry-box";
+    box.innerHTML = `
+      <strong>${entry.date}</strong>
+      <p>${entry.content}</p>
+      <button class="delete-btn" onclick="deleteEntry(${index})">🗑️ Delete</button>
+    `;
+    entriesContainer.appendChild(box);
+  });
+}
+function deleteEntry(index) {
+  if (confirm("Delete this entry?")) {
+    savedEntries.splice(index, 1);
+    localStorage.setItem("journalEntries", JSON.stringify(savedEntries));
+    renderEntries();
+  }
+}
+
+
+    
+  </script>
+</body>
+</html>

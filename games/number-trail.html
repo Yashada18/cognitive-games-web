@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Number Trail</title>
+  <link rel="stylesheet" href="number-style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.11.1/tsparticles.bundle.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="tsparticles"></div>
+
+  <div class="game-container">
+    <h1>🔢 Number Trail</h1>
+    <p class="instructions">Click numbers in order from 1 to N!</p>
+
+    <div class="level-select">
+      <label for="level">Choose Level:</label>
+      <select id="level">
+        <option value="1">Easy (1–9)</option>
+        <option value="2">Medium (1–16)</option>
+        <option value="3" selected>Hard (1–25)</option>
+      </select>
+    </div>
+
+    <div class="grid" id="grid"></div>
+
+
+    <div id="win-message" class="hidden">
+      <h2>🎉 Well Done!</h2>
+      <button onclick="startGame()">Play Again</button>
+    </div>
+  </div>
+
+ 
+
+
+  <script src="number-script.js" defer></script>
+</body>
+</html>

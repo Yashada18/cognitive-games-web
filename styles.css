@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
 
 
 
@@ -67,6 +68,20 @@ section {
   background-color: #00ffcc;
   color: #0d0d0d;
 }
+
+.alt-btn {
+  margin-left: 1rem;
+  background-color: transparent;
+  border: 2px solid #00d2ff;
+  color: #00d2ff;
+  box-shadow: 0 0 12px #00d2ff;
+}
+
+.alt-btn:hover {
+  background-color: #00d2ff;
+  color: #0d0d0d;
+}
+
 
 .right-section {
   flex: 1;
@@ -138,17 +153,20 @@ section {
 body, html {
   margin: 0;
   padding: 0;
-  height: 100%;
-  font-family: 'Press Start 2P', monospace;
-  overflow: hidden;
+  min-height: 100vh;
   background: #0d0d0d;
+  overflow: hidden; 
+  font-family: 'Press Start 2P', monospace;
 }
+
 
 section {
   position: relative;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  padding-bottom: 5rem; 
 }
+
 
 #tsparticles {
   position: absolute;
@@ -192,7 +210,7 @@ section {
 .game-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
+  gap:3rem;
   padding: 2rem;
   max-width: 1200px;
   margin: 0 auto;
@@ -202,7 +220,7 @@ section {
   background: rgba(255, 255, 255, 0.05);
   border: 2px solid #00ffcc;
   border-radius: 16px;
-  padding: 1rem;
+  padding: 2rem;
   color: white;
   text-align: center;
   box-shadow: 0 0 20px rgba(0, 255, 204, 0.3);
@@ -239,4 +257,255 @@ section {
 .game-card .start-btn:hover {
   background: white;
   color: #2575fc;
+}
+
+.student-zone {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  padding: 5rem 4rem;
+}
+
+.student-zone h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.student-tools {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.tool-card {
+  background: rgba(0, 255, 204, 0.1);
+  border: 2px solid #00ffcc;
+  border-radius: 12px;
+  padding: 2rem 2rem;
+  font-size: 1.2rem;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  min-width: 350px;
+  box-shadow: 0 0 15px #00ffcc;
+  transition: 0.3s;
+  position: relative;
+  top:100px;
+}
+
+
+
+.scoreboard {
+  background: rgba(0, 255, 204, 0.1);
+  border: 2px solid #00ffcc;
+  border-radius: 12px;
+  padding: 2rem 2rem;
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  min-width:350px;
+  position: relative;
+  top:200px;
+  box-shadow: 0 0 15px #00ffcc;
+  transition: 0.3s;
+}
+
+.tool-card:hover,.scoreboard:hover {
+  background: #00ffcc;
+  color: #0d0d0d;
+}
+
+.journal-section {
+  z-index: 2;
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 3rem 2rem;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.journal-section h2 {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+textarea#journal-entry {
+  width: 90%;
+  max-width: 800px;
+  height: 250px;
+  padding: 1rem;
+  font-size: 1rem;
+  font-family: 'Press Start 2P', monospace;
+  border-radius: 12px;
+  border: 2px solid #00ffcc;
+  background: rgba(0, 255, 204, 0.05);
+  color: white;
+  resize: none;
+  outline: none;
+}
+
+.journal-btn {
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  font-size: 1rem;
+  font-family: 'Press Start 2P', monospace;
+  background-color: #00ffcc;
+  border: none;
+  color: #0d0d0d;
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 15px #00ffcc;
+  transition: 0.3s;
+}
+
+.journal-btn:hover {
+  background: white;
+  color: #2575fc;
+}
+
+.saved-status {
+  margin-top: 1rem;
+  color: #00ffcc;
+  font-size: 0.9rem;
+}
+
+.entries-title {
+  margin-top: 3rem;
+  font-size: 1rem;
+  color: #00ffcc;
+}
+
+.entry-box {
+  border: 2px solid #00ffcc;
+  background: rgba(0, 255, 204, 0.05);
+  padding: 1rem;
+  border-radius: 10px;
+  margin: 1rem auto;
+  max-width: 700px;
+  text-align: left;
+  font-size: 0.85rem;
+  color: white;
+  box-shadow: 0 0 10px #00ffcc66;
+}
+
+.entry-box strong {
+  color: #00ffcc;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.delete-btn {
+  margin-top: 0.5rem;
+  background-color: transparent;
+  border: 2px solid #ff4d4d;
+  color: #ff4d4d;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 0.6rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.delete-btn:hover {
+  background-color: #ff4d4d;
+  color: black;
+}
+
+.journal-page {
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.scoreboard-section {
+  z-index: 2;
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 3rem 2rem;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.scoreboard-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+
+.scoreboard-entry {
+  background: rgba(0, 255, 204, 0.1);
+  border: 2px solid #00ffcc;
+  border-radius: 12px;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+  box-shadow: 0 0 15px #00ffcc;
+}
+
+/* Enable scrolling ONLY on scoreboard page */
+.scoreboard-page {
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.assignments-page {
+  overflow-y: auto;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+.assignments-section {
+  z-index: 2;
+  position: relative;
+  text-align: center;
+  color: white;
+  padding: 3rem 2rem;
+  font-family: 'Press Start 2P', monospace;
+}
+
+.assignment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.assignment-card {
+  background: rgba(0, 255, 204, 0.1);
+  border: 2px solid #00ffcc;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 15px #00ffcc;
+  text-align: left;
+}
+
+.assignment-card h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.assignment-card button {
+  margin-top: 1rem;
+  padding: 0.5rem 1.2rem;
+  font-size: 0.8rem;
+  font-family: 'Press Start 2P', monospace;
+  background: #00ffcc;
+  border: none;
+  border-radius: 8px;
+  color: #0d0d0d;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.assignment-card button:disabled {
+  background: #999;
+  color: white;
+  cursor: not-allowed;
 }

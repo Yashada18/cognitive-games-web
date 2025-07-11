@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Scoreboard</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  </style>
+</head>
+<body class="scoreboard-page">
+  <section>
+    <div id="tsparticles"></div>
+    <div class="glow"></div>
+
+    <div class="scoreboard-section">
+      <h2>🏆 My Scoreboard</h2>
+
+      <div class="scoreboard-entry">
+        <p>🧠 Memory Match: <span id="score-memory">0</span></p>
+      </div>
+
+      <div class="scoreboard-entry">
+        <p>⚡ Reaction Tap: <span id="score-reaction">0</span></p>
+      </div>
+
+      <div class="scoreboard-entry">
+        <p>🔢 Number Trail: <span id="score-number">0</span></p>
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+    // Load scores from localStorage
+    document.getElementById("score-memory").textContent = localStorage.getItem("scoreMemory") || 0;
+    document.getElementById("score-reaction").textContent = localStorage.getItem("scoreReaction") || 0;
+    document.getElementById("score-number").textContent = localStorage.getItem("scoreNumber") || 0;
+  </script>
+</body>
+</html>

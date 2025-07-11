@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Game Assignments</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+  </style>
+</head>
+<body class="assignments-page">
+  <section>
+    <div id="tsparticles"></div>
+    <div class="glow"></div>
+
+    <div class="assignments-section">
+      <h2>📋 Game Assignments</h2>
+
+      <div class="assignment-list" id="assignmentList">
+        <!-- Tasks will be generated here -->
+      </div>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <script>
+  const taskPool = [
+    { title: "🧠 Memory Match", desc: "Play for 2 minutes" },
+    { title: "⚡ Reaction Tap", desc: "Complete 3 rounds" },
+    { title: "🔢 Number Trail", desc: "Reach 100 points" },
+    { title: "🎯 Memory Match", desc: "Score at least 150" },
+    { title: "⚡ Reaction Tap", desc: "Tap within 1 second 5 times" }
+  ];
+
+  const today = new Date().toISOString().split('T')[0]; // format: YYYY-MM-DD
+  const dailyKey = `assignment-${today}`;
+  const doneKey = `${dailyKey}-done`;
+
+  let assignment = JSON.parse(localStorage.getItem(dailyKey));
+
+  // If no assignment stored for today, pick one randomly
+  if (!assignment) {
+    assignment = taskPool[Math.floor(Math.random() * taskPool.length)];
+    localStorage.setItem(dailyKey, JSON.stringify(assignment));
+  }
+
+  const done = localStorage.getItem(doneKey) === "true";
+
+  const container = document.getElementById("assignmentList");
+  const card = document.createElement("div");
+  card.className = "assignment-card";
+  card.innerHTML = `
+    <h3>${assignment.title}</h3>
+    <p>${assignment.desc}</p>
+    <button onclick="markTodayDone(this)" ${done ? "disabled" : ""}>
+      ${done ? "✅ Done" : "Mark as Done"}
+    </button>
+  `;
+  container.appendChild(card);
+
+  function markTodayDone(btn) {
+    localStorage.setItem(doneKey, "true");
+    btn.textContent = "✅ Done";
+    btn.disabled = true;
+  }
+</script>
+
+</body>
+</html>
